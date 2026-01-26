@@ -4,13 +4,12 @@
 * {
 	margin: 0;
 	padding: 0;
+}
+
+html {
 	scroll-behavior: smooth;
 	cursor: url('images/mouse.svg'), auto;
 }
-
-/* selector {
-	
-  } */
 
 body {
 	font-family: "Instrument Sans", sans-serif;
