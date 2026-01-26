@@ -54,6 +54,19 @@ a:visited {
 	font-weight: 650;
 } */
 
+.nav-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: 100%;
+}
+
+.home-nav-container {
+	position: absolute;
+	left: 10rem;
+}
+
 .nav-item a:hover {
 	background-image: url("images/bg-line.svg");
 	background-size: auto;
@@ -61,13 +74,15 @@ a:visited {
 
 .nav-placement-container {
 	position: fixed;
-  	top: 0;
-  	left: 50%;
-  	transform: translateX(-50%);
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
 	z-index: 10;
 }
 
-.nav-container {  
+.nav-text-container {  
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -131,7 +146,12 @@ section {
 	transition: text-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.icon:hover {
+.icon-main {
+	width: 4rem;
+	transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.icon:hover, .icon-main:hover {
 	text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
 	transform: scale(1.1);
 }
