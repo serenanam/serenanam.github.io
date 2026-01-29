@@ -110,6 +110,28 @@ section {
 	gap: 5rem;
 }
 
+.title-container h1,
+.title-container h3,
+.socials-container {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.0s ease, transform 1.0s ease;
+}
+
+.profile-doodle {
+	opacity: 0;
+	transform: translateY(40px);
+	transition: opacity 1.5s ease, transform 1.5s ease;
+  }
+
+.title-container h1.show,
+.title-container h3.show,
+.socials-container.show,
+.profile-doodle.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .title-container {
 	display: flex;
 	flex-direction: column;
