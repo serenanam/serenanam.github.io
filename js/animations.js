@@ -16,6 +16,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+//navbar section highlight
+const navLinks = document.querySelectorAll(".nav-item a");
+const sections = document.querySelectorAll("section");
+
+function updateActiveNav() {
+  let currentSectionId = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 80;
+    const sectionHeight = section.offsetHeight;
+
+    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+      currentSectionId = section.getAttribute("id");
+    }
+  });
+  
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${currentSectionId}`) {
+      link.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", updateActiveNav);
+window.addEventListener("load", updateActiveNav);
+
+
 // experience section scroll
 document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".experience-card, .experience-container-header");
