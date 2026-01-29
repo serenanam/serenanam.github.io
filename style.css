@@ -183,6 +183,17 @@ section {
 	gap: 0.5rem;
 }
 
+.experience-card, .experience-container-header {
+	opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.experience-card.show, .experience-container-header.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .experience-card h4 {
 	background-image: url("images/bg-line.svg");
 }
