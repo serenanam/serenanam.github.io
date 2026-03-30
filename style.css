@@ -264,6 +264,24 @@ section {
 	text-decoration: underline;
 }
 
+.about-socials-link:hover {
+	color: #d6bec8;
+}
+/* .icon {
+	width: 2rem;
+	transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.icon-main {
+	width: 4rem;
+	transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.icon:hover, .icon-main:hover {
+	text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+	transform: scale(1.1);
+} */
+
 
 .footer {
 	text-align: center;
