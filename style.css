@@ -123,7 +123,7 @@ section {
 	opacity: 0;
 	transform: translateY(40px);
 	transition: opacity 1.5s ease, transform 1.5s ease;
-  }
+}
 
 .title-container h1.show,
 .title-container h3.show,
@@ -247,6 +247,23 @@ section {
 .about-container, .projects-container, .play-container {
 	margin: 10rem 20vw;
 }
+
+.about-container {
+	margin: 10vh 20vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5rem;
+}
+
+.about-img {
+	max-width: 70%;
+}
+
+.about-socials-link {
+	text-decoration: underline;
+}
+
 
 .footer {
 	text-align: center;
