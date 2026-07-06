@@ -1,5 +1,30 @@
 //hero content appear
 document.addEventListener("DOMContentLoaded", () => {
+  // mobile popup
+  const mobilePopup = document.getElementById("mobile-popup");
+  const mobilePopupClose = document.querySelector(".mobile-popup-close");
+  const mobileViewport = window.matchMedia("(max-width: 768px)");
+
+  const updateMobilePopup = () => {
+    if (!mobilePopup) {
+      return;
+    }
+
+    const shouldShow = mobileViewport.matches;
+    mobilePopup.classList.toggle("is-visible", shouldShow);
+    mobilePopup.setAttribute("aria-hidden", String(!shouldShow));
+    document.body.style.overflow = shouldShow ? "hidden" : "";
+  };
+
+  mobilePopupClose?.addEventListener("click", () => {
+    mobilePopup?.classList.remove("is-visible");
+    mobilePopup?.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  });
+
+  mobileViewport.addEventListener("change", updateMobilePopup);
+  updateMobilePopup();
+
   const heroItems = [
     [document.querySelector(".title-container .title-text1"),
     document.querySelector(".profile-doodle")],
