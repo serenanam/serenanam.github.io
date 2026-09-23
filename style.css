@@ -102,11 +102,27 @@ section {
 
 /* HOME SECTION */
 .home-container {
+	position: relative;
 	margin: 5vh 10vw;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
 	gap: 5rem;
+}
+
+.home-container > canvas {
+	position: absolute;
+	pointer-events: none;
+
+	/* Fade the outer edge on all four sides */
+	-webkit-mask-image:
+		linear-gradient(to right, transparent 0, #000 96px, #000 calc(100% - 96px), transparent 100%),
+		linear-gradient(to bottom, transparent 0, #000 96px, #000 calc(100% - 96px), transparent 100%);
+	-webkit-mask-composite: source-in;
+	mask-image:
+		linear-gradient(to right, transparent 0, #000 96px, #000 calc(100% - 96px), transparent 100%),
+		linear-gradient(to bottom, transparent 0, #000 96px, #000 calc(100% - 96px), transparent 100%);
+	mask-composite: intersect;
 }
 
 .title-container h1,
