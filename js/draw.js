@@ -67,5 +67,6 @@ function draw() {
 }
 
 function windowResized() {
+  if (!cnv) return;
   resizeCanvas(homeContainer.clientWidth + PAD * 2, homeContainer.clientHeight + PAD * 2);
 }

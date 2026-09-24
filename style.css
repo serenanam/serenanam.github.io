@@ -573,3 +573,172 @@ body {
 .scroll-hint.hidden {
   opacity: 0;
 }
+
+/* ===== RESPONSIVE OVERRIDES =====
+
+/* Fluid title: identical to 4.5rem on wide screens, shrinks below ~1030px */
+h1 {
+	font-size: clamp(2.5rem, 7vw, 4.5rem);
+}
+
+/* Tags wrap instead of spilling out of the card */
+.experience-tag-container {
+	flex-wrap: wrap;
+}
+
+/* The extended drawing canvas must never cause sideways scrolling */
+#home {
+	overflow-x: clip;
+}
+
+/* ---------- Small laptops / tablets landscape ---------- */
+@media (max-width: 1200px) {
+	.home-nav-container {
+		left: 3rem;
+	}
+
+	.nav-text-container {
+		gap: 3rem;
+	}
+
+	.home-container {
+		margin: 5vh 6vw;
+		gap: 3rem;
+	}
+
+	.profile-doodle {
+		width: min(25rem, 36vw);
+	}
+
+	.banner-wrapper {
+		width: calc(100% - 12vw);
+		margin: 0 6vw;
+	}
+
+	.banner-wrapper::before {
+		left: -6vw;
+	}
+
+	.banner-wrapper::after {
+		right: -6vw;
+	}
+
+	/* Give content more room: was 20vw left + 20vw right + 25vw extra */
+	.experience-section-container {
+		margin: 0 8vw;
+	}
+
+	.experience-container {
+		margin-right: 4vw;
+	}
+
+	.projects-container {
+		margin: 5rem 8vw;
+	}
+
+	.about-container {
+		margin: 10vh 6vw;
+		gap: 3rem;
+	}
+
+	/* Let the film roll window shrink instead of pushing the canister */
+	.film-clip-mask {
+		min-width: 0;
+		flex: 1;
+	}
+
+	.film-wrapper {
+		min-width: 0;
+	}
+}
+
+/* ---------- Tablets portrait ---------- */
+@media (max-width: 900px) {
+	section {
+		height: auto;
+		padding-top: 16vh;
+		margin-bottom: 2rem;
+	}
+
+	.home-nav-container {
+		left: 1rem;
+	}
+
+	.icon-main {
+		width: 2.75rem;
+	}
+
+	.nav-text-container {
+		gap: 1.5rem;
+		margin: 1.5rem 0;
+		padding: 0.75rem 1.25rem;
+	}
+
+	/* Stack the hero */
+	.home-container {
+		flex-direction: column;
+		align-items: center;
+		margin: 3vh 6vw;
+		gap: 2rem;
+	}
+
+	.profile-doodle {
+		width: min(20rem, 70vw);
+	}
+
+	.about-container {
+		margin: 6vh 4vw;
+	}
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 600px) {
+	/* Logo would collide with the nav pill; the pill still links to every section */
+	.home-nav-container {
+		display: none;
+	}
+
+	.nav-text-container {
+		gap: 1rem;
+		margin: 1rem 0;
+	}
+
+	.experience-section-container,
+	.projects-container {
+		margin-left: 6vw;
+		margin-right: 6vw;
+	}
+
+	.experience-container {
+		margin-right: 0;
+	}
+
+	.banner-wrapper {
+		width: calc(100% - 8vw);
+		margin: 0 4vw;
+	}
+
+	.banner-wrapper::before {
+		left: -4vw;
+	}
+
+	.banner-wrapper::after {
+		right: -4vw;
+	}
+
+	.about-container {
+		margin: 4vh 3vw;
+		gap: 1.5rem;
+	}
+}
+
+/* ---------- Short screens (small laptops, landscape phones) ---------- */
+@media (max-height: 700px) {
+	section {
+		padding-top: 26vh;
+	}
+
+	.nav-text-container {
+		margin: 2rem 0;
+	}
+}
